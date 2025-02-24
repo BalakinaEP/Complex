@@ -16,14 +16,35 @@ double Complex::getAngle() const
   return atan(im/re);
 }
 
-double Complex::getSum(const Complex& other)
+double Complex::operator+(const Complex& other)
 {
   double newRe = re + other.re;
   double newIm = im + other.im;
   return Complex(newRe, newIm);
 }
 
-bool isEcual(const Complex& other)
+double Complex::operator-(const Complex& other)
+{
+  double newRe = re - other.re;
+  double newIm = im - other.im;
+  return Complex(newRe, newIm);
+}
+
+double Complex::operator*(const Complex& other)
+{
+  double newRe = re * other.re + im * other.im;
+  double newIm = im * other.re + re * other.im;
+  return Complex(newRe, newIm);
+}
+
+double Complex::operator/(const Complex& other)
+{
+  double newRe = (re * other.re + im * other.im) / (other.re * other.re + other.im * other.im);
+  double newIm = (im * other.re - re * other.im) / (other.re * other.re + other.im * other.im);
+  return Complex(newRe, newIm);
+}
+
+bool Complex::operator==(const Complex& other)
 {
   return re == other.re && im == other.im
 }
