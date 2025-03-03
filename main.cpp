@@ -11,15 +11,25 @@ int main()
   double re = getValue ("Введите действительную часть числа: ");
   double im = getValue ("Введите мнимую часть числа: ");
   Complex z1(re,im);
-  
-  re = getValue ("Введите действительную часть числа: ");
-  im = getValue ("Введите мнимую часть числа: ");
-  Complex z2(re,im);
-
+  Complex z2;
+  cin >> z2;
   std::cout << "Модуль комплексного числа z1 равен: " << z1.getModule()<<endl;
   std::cout << "Угол комплексного числа z1 равен: " << z1.getAngle()<<endl;
-  std::cout << "Сумма z1 + z2 = " << z1 + z2 << endl;
-  
+  Complex result = z1 + z2;
+  std::cout << "Сумма z1 + z2 = " << result;
+  result = z1 - z2;
+  std::cout << "Разность z1 - z2 = " << result;
+  result = z1 * z2;
+  std::cout << "Произведение z1 * z2 = " << result;
+  result = z1 / z2;
+  std::cout << "Деление z1 / z2 = " << result;;
+  double coef = getValue("Введите константу: ");
+  result = z1 * coef;
+  result.show();std::cout << "Произведение z2 * " 
+      << coef <<" = " << result; 
+  result = coef * z1;
+  result.show();std::cout << "Произведение " 
+      << coef <<" * z2 = " << result.toString();
   return 0;
 }
 
