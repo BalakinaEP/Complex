@@ -15,4 +15,9 @@ class Complex
   Complex operator*(const double other);
   Complex operator/(const Complex& other);
   bool operator==(const Complex& other);
+  bool operator!=(const Complex& other);
+  friend std::ostream& operator<<(std::ostream& os, const Complex& z);
+  friend std::istream& operator>>(std::istream& is, const Complex& z);
+  friend Complex operator*(const double other, const Complex& z);
+  std::string toString() const;
 };
