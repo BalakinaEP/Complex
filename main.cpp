@@ -25,10 +25,10 @@ int main()
   std::cout << "Деление z1 / z2 = " << result;;
   double coef = getValue("Введите константу: ");
   result = z1 * coef;
-  result.show();std::cout << "Произведение z2 * " 
+  std::cout << "Произведение z2 * " 
       << coef <<" = " << result; 
   result = coef * z1;
-  result.show();std::cout << "Произведение " 
+  std::cout << "Произведение " 
       << coef <<" * z2 = " << result.toString();
   return 0;
 }
